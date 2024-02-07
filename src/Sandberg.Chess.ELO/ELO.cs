@@ -12,14 +12,14 @@ namespace Sandberg.Chess
             double _scoreWhite = result == GameResult.White ? 1 : result == GameResult.Remis ? 0.5 : 0;
             double _scoreBlack = result == GameResult.Black ? 1 : result == GameResult.Remis ? 0.5 : 0;
 
-            var expectedScores = GetExpectedScore(ratingPlayerWhite, ratingPlayerBlack);
-            var newRatings = GetNewRatings(ratingPlayerWhite, ratingPlayerBlack, expectedScores.playerWhite, expectedScores.playerBlack, _scoreWhite, _scoreBlack, kFaktorWhite, kFaktorBlack);
+            var (playerWhite, playerBlack) = GetExpectedScore(ratingPlayerWhite, ratingPlayerBlack);
+            var (newRatingWhite, newRatingBlack) = GetNewRatings(ratingPlayerWhite, ratingPlayerBlack, playerWhite, playerBlack, _scoreWhite, _scoreBlack, kFaktorWhite, kFaktorBlack);
 
             return new RatingResult
             {
                 Winner = result,
-                White = new RatingPlayerResult(ratingPlayerWhite, newRatings.newRatingWhite, expectedScores.playerWhite, _scoreWhite, kFaktorWhite),
-                Black = new RatingPlayerResult(ratingPlayerBlack, newRatings.newRatingBlack, expectedScores.playerBlack, _scoreBlack, kFaktorBlack)
+                White = new RatingPlayerResult(ratingPlayerWhite, newRatingWhite, playerWhite, _scoreWhite, kFaktorWhite),
+                Black = new RatingPlayerResult(ratingPlayerBlack, newRatingBlack, playerBlack, _scoreBlack, kFaktorBlack)
             };
         }
 

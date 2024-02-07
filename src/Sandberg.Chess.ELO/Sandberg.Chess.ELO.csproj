@@ -1,13 +1,16 @@
 ﻿<Project Sdk="Microsoft.NET.Sdk">
 	<PropertyGroup>
-		<TargetFrameworks>netstandard2.0</TargetFrameworks>
+		<TargetFrameworks>netstandard2.0;netstandard2.1</TargetFrameworks>
 		<GeneratePackageOnBuild>True</GeneratePackageOnBuild>
 		<Title>ELO Chess Calculator</Title>
 		<Authors>Stian Sandberg</Authors>
 		<PackageIcon></PackageIcon>
 		<PackageReadmeFile>README.md</PackageReadmeFile>
-		<RepositoryUrl>https://github.com/stiansandberg/ChessELO</RepositoryUrl>
+		<RepositoryUrl>https://github.com/stiansandberg/Sandberg.Chess.ELO</RepositoryUrl>
 		<PackageTags>chess;elo;rating</PackageTags>
+		<Version>1.0.1</Version>
+		<Company>Sandberg Software AS</Company>
+		<PackageProjectUrl>https://chess.stian.net</PackageProjectUrl>
 	</PropertyGroup>
 	<ItemGroup>
 	  <None Include="..\..\README.md">

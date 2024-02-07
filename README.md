@@ -1,4 +1,4 @@
-# Sandberg.ChessELO
+# Sandberg.Chess.ELO
 
 Easy to use library to calculate Chess ELO rating and ELO performance
 
